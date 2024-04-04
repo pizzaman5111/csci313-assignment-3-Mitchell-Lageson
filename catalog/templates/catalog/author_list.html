@@ -5,10 +5,15 @@
   {% if author_list %}
     <ul>
       {% for author in author_list %}
-      <li>
-        <a href="{{ author.get_absolute_url }}">{{ author.first_name }},{{ author.last_name }}</a>
-        ({{author.date_of_birth}})
-      </li>
+      <div class="card w-75 mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{{ author.get_absolute_url }}">{{ author.first_name }}, {{ author.last_name }}</a></h5>
+          <hr>
+          <p class="card-text">
+            <strong>Date of Birth: </strong> {{author.date_of_birth}}
+          </p>
+        </div>
+      </div>
       {% endfor %}
     </ul>
   {% else %}
